@@ -1,0 +1,73 @@
+{
+  "name": "angulator",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nabil Mansouri",
+    "email": "nabil.mansouri.3@gmail.com"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "Apache 2.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build:dist": "ng-packagr -p package.json",
+    "build": "ng build --prod",
+    "test": "ng test --sourcemaps=false",
+    "lint": "ng lint",
+    "webpack": "webpack --config config/webpack.prod.js --progress --colors",
+    "e2e": "ng e2e"
+  },
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0 <7.0.0",
+    "@angular/forms": ">=5.0.0 <7.0.0"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/app/module.ts"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/cli": "~1.7.0",
+    "@angular/common": "^5.2.5",
+    "@angular/compiler": "^5.2.5",
+    "@angular/compiler-cli": "^5.2.5",
+    "@angular/core": "^5.2.5",
+    "@angular/forms": "^5.2.5",
+    "@angular/platform-browser": "^5.2.5",
+    "@angular/platform-browser-dynamic": "^5.2.5",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/latinize": "^0.2.15",
+    "@types/node": "~6.0.60",
+    "awesome-typescript-loader": "^3.4.1",
+    "chalk": "^2.3.1",
+    "codelyzer": "^4.0.1",
+    "copy-webpack-plugin": "^4.4.1",
+    "core-js": "^2.5.3",
+    "dts-bundle": "^0.7.3",
+    "dts-bundle-webpack": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "latinize": "^0.4.0",
+    "moment": "^2.20.1",
+    "ng-packagr": "^2.0.0",
+    "ng2-validation": "^4.2.0",
+    "ts-node": "~4.1.0",
+    "tsickle": "^0.27.2",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3",
+    "webpack": "^3.11.0",
+    "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0",
+    "zone.js": "^0.8.5"
+  }
+}

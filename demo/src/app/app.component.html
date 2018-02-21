@@ -1,0 +1,35 @@
+<div [nbGroup]="user" ngForm>
+    <div >
+        Name:
+        <input type="text" nbModel="name" class="name" (nbModelChange)="changed()" />
+    </div>
+    <div>
+        Has brother:
+        <input type="checkbox" nbModel="hasBrother" class="hasBrother" (nbModelChange)="changedCheck()" />
+    </div>
+    <div>
+        <input type="text" nbModel="brother" class="brother" />
+    </div>
+    <div>
+        <input type="number" nbModel="age" class="age" (nbModelChange)="changedNum()" />
+    </div>
+    <div>
+        <input type="radio" nbModel="sexe" class="girl" value="girl" (nbModelChange)="changedRadio()" />
+    </div>
+    <div>
+        <input type="radio" nbModel="sexe" class="boy" value="boy" (nbModelChange)="changedRadio()" />
+    </div>
+    <div>
+        <select nbModel="happy" class="happy" (nbModelChange)="changedSelect()">
+            <option value="yes" class="yes">YES</option>
+            <option value="no" class="no">NO</option>
+        </select>
+    </div>
+    <div>
+        <select multiple nbModel="colors" class="colors" (nbModelChange)="changedSelect()">
+            <option value="blue" class="blue">blue</option>
+            <option value="yellow" class="yellow">yellow</option>
+            <option value="green" class="green">green</option>
+        </select>
+    </div>
+</div>
