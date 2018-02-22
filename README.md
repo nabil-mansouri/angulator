@@ -13,7 +13,8 @@ See demo folder!
 Or run npm test
 
 ### Import module
-`
+
+```typescript
 import {
   AngulatorModule
 } from "angulator";
@@ -29,11 +30,11 @@ import {
 })
 export class AppModule {
 }
+```
 
-`
+### Annotate model
 
-###Annotate model
-`
+```typescript
 import {
   MinLength, MaxLength, EnabledIf, MaxLengthIf, DisabledIf, Capitalize,
   RequiredIf, Required, RequiredTrue, Length, IsEqual, Min, Max,
@@ -89,10 +90,11 @@ export class User {
   @DateLt("dateltDep") datelt: Date;
   @Phone() isphone: string;
 }
-`
+```
 
 ### Add the directive on template
-`
+
+```html
 <div [nbGroup]="user" ngForm>
     <div >
         Name:
@@ -128,7 +130,7 @@ export class User {
         </select>
     </div>
 </div>
-`
+```
 
 # How does it works?
 This module provide two directives "nbGroup" and "nbModel".
