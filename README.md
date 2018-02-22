@@ -1,25 +1,18 @@
-#angulator
+# angulator
 An angular plugin to validate forms using annotation on model.
 
-CRUD (with ttl...)
-conflict management
-CRUD attachment (file, image...)
-View (map, mapreduce...)
-Queries (full query features, live queries, all docs, group levels)
-Replication (pull and push, filters, authentication, channels, listeners...)
-Database encryption
-Typescript mapping object (return objects with getters/setters...)
-#Author
-Nabil MANSOURI paypal
-#How to use it
-##1- Import dependency
-npm i --save angulator
+# Author
+Nabil MANSOURI
 
-##2- Samples
+# How to use it
+## 1- Import dependency
+`npm i --save angulator`
+
+## 2- Samples
 See demo folder!
+Or run npm test
 
-
-###Import module
+### Import module
 `
 import {
   AngulatorModule
@@ -40,7 +33,6 @@ export class AppModule {
 `
 
 ###Annotate model
-
 `
 import {
   MinLength, MaxLength, EnabledIf, MaxLengthIf, DisabledIf, Capitalize,
@@ -99,8 +91,7 @@ export class User {
 }
 `
 
-###Add the directive on template
-
+### Add the directive on template
 `
 <div [nbGroup]="user" ngForm>
     <div >
@@ -139,96 +130,94 @@ export class User {
 </div>
 `
 
-#How does it works?
-
+# How does it works?
 This module provide two directives "nbGroup" and "nbModel".
 These directives extends "ngModel" and add some validators automatically.
 "nbModel" manage a state that let accessor listen and modify the DOM if needed. For example @MaxLength change the state of the model and the default accessor will add a property "maxLength" on the DOM.
 
-#List of annotation
-
-##MinLength, MaxLength, Length
+# List of annotation
+## MinLength, MaxLength, Length
 Accept an integer as parameter.
 It validates that the input field (string) has a length greater (or smaller) than the value provide as parameter.
 It also add an attribute "maxLength" (or "minLength") to the DOM element.
 
-##EnabledIf, DisabledIf
+## EnabledIf, DisabledIf
 Accept a string or an array of string (dependencies) as parameter.
 The field is disabled or enabled according to the dependencies. Dependencies are others fields that we need to listen in order to update the state of the model.
 For exemple: a checkbox "hasName" could enable or disable the field "name".
 So "name" will be annoted by @EnabledIf("hasName")
 
-##MaxLengthIf
+## MaxLengthIf
 Accept a string or an array of string (dependencies) as parameter and an integer (maxLength)
 The maxlength of the field is computed according to dependencies fields.
 For example, you could have a phone number with a maxlength of 10 and another field prefix. If prefix is filled, maxlength of phone is: maxlength-length(prefix).
 
-##Capitalize
+## Capitalize
 It automatically capitalize the input while typing
 
-##RequiredIf
+## RequiredIf
 The field is required or not according to the dependencies. Dependencies are others fields that we need to listen in order to update the state of the model.
 For exemple: a checkbox "isRequired" could force the field "name".
 
-##Required
+## Required
 The field is required
 
-##RequiredTrue
+## RequiredTrue
 Apply to a checkbox. The checkbox must be checked by the user.
 
-##IsEqual, Min, Max,Range
+## IsEqual, Min, Max,Range
 Accept an integer as parameter.
 The number must be equal (or greater or smaller) than the value.
 
-##MinDate, MaxDate
+## MinDate, MaxDate
 Accept a date or a constant (TOday, Now...)
 The date must be greater (or smaller) than the value.
 
-##MinArray, MaxArray
+## MinArray, MaxArray
 Accept an integer as parameter.
 The collection length must be greater (or smaller) than the value.
 
-##Pattern
+## Pattern
 Accept a regex or a string as parameter.
 The value must match the regex.
 
-##IsIP
+## IsIP
 The value must be an IP address
 
-##Digits
+## Digits
 The value must contains only digits
 
-##DateIso
+## DateIso
 The value must be a date with format : YYYY-MM-DD
 
-##IsEmail
+## IsEmail
 The value must be an email
 
-##IsDate
+## IsDate
 THe value must be a valid date
 
-##IsUrl
+## IsUrl
 THe value must be an URL.
 
-##IsNumber
+## IsNumber
 The value must be a valid number (input type number)
 
-##DateGt, DateLt
+## DateGt, DateLt
 Accept a string or an array of string (dependencies) as parameter.
 The value must be greater (or smaller) than the dependency value.
 The aim is to validate one date regarding another.
 
-##Phone
+## Phone
 The value must be a valid phone
 
-##Unaccent
+## Unaccent
 Automatically unaccent the text while the user is typing.
 
-##ReadOnly
+## ReadOnly
 The field is a read only field
 
 
-#TODO
+# TODO
 - externalize validator in order to make a backend validation using the same model
 - externalize accessor because it is platform dependent (web)
 - extend to make it available for nativescript (mobile apps)
